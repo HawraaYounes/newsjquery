@@ -3,13 +3,11 @@ const getNews=()=>{
     
     $.getJSON('http://localhost/newsjquery/news.php', function(data) {
         $.each(data,function(key,value){
-            let id=value.id;
-            let news=value.new;
-            let date=value.date;
-            console.log(id);
-            console.log(date);
-            console.log(news);
-            //$("tbody").append("<tr>"+td+"</tr>")
+            let id="<th>"+value.id+"</th>";
+            let date="<td>"+value.date+"</td>";
+            let news="<td colspan='2'>"+value.new+"</td>";
+            let tr="<tr>"+id+date+news+"</tr>";
+            $("tbody").append(tr);
         })
       });
     }
